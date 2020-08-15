@@ -30,22 +30,50 @@ const int N = 3e5, M = N;
 //=======================
 
 
-void solve()
+int solve()
 {
- 
+	int i , count = 1 , l;
+	string s;
+	
+	cin>>s;
+	
+	l = s.length();
+	
+	if(l < 7)
+	{
+		cout << "NO" << endl;
+		return 0;
+	}
+	else
+	{
+		for( i = 1 ; i < l ; i ++)
+		{
+			if(s[i] == s[i-1])
+			{
+				++count;
+				if(count == 7)
+				{
+					cout<<"YES"<<endl;
+					return 0;
+				}
+			}
+			else
+			{
+				count = 1;
+			}
+		}
+	}
+	
+	cout << "NO" << endl;
+	return 0;
+
 }
 
 int main()
 {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-    int T;
-    cin >> T;
-    for (int i = 0; i < T; i++)
-    {
-        cout << "Case #" << i + 1 << ": ";
-        solve();
-    }
+    solve();
 
     return 0;
 }
