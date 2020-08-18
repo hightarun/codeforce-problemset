@@ -34,20 +34,28 @@ const int N = 3e5, M = N;
 
 void solve()
 {
- 
+	ll int n , m , a , x ,y;
+	cin>> n >> m >> a;
+	
+	if(n%a == 0)
+		x = n/a;
+	else
+		x =(n/a)+1;
+	if(m%a == 0)
+		y = m/a;
+	else
+		y =(m/a)+1;
+	
+	cout<< x * y;
+	 
 }
 
 int main()
 {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-
-    int T;
-    cin >> T;
-    for (int i = 0; i < T; i++)
-    {
-        cout << "Case #" << i + 1 << ": ";
-        solve();
-    }
+    
+    solve();
+  
 
     return 0;
 }

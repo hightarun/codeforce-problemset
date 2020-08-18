@@ -34,20 +34,25 @@ const int N = 3e5, M = N;
 
 void solve()
 {
- 
+	string s , str;
+	cin>>s;
+	for(auto& c: s)
+		c = tolower(c);
+	
+	regex r("[aeiouy]");
+	str = regex_replace(s,r,"");
+	
+	for(auto& c: str)
+	{
+		cout<<'.'<<c;
+	} 
 }
 
 int main()
 {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 
-    int T;
-    cin >> T;
-    for (int i = 0; i < T; i++)
-    {
-        cout << "Case #" << i + 1 << ": ";
-        solve();
-    }
-
+    solve();
+   
     return 0;
 }
